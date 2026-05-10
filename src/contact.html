@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Artisan</title>
+    <link rel="stylesheet" href="./assets/styles/main.scss" />
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </head>
+  <body>
+    <div class="layout__contact">
+      <include src="./views/header.html"></include>
+
+      <div class="layout__ponientes-container">
+        <form name="contact" method="POST" action="./index.html" netlify>
+          <h2>Forma parte de Artisan</h2>
+          <p class="form-subtitle">
+            Escríbenos sobre las ponencias que te interesen
+          </p>
+          <div class="module__form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="module__form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="module__form-group">
+            <label>Ponencias</label>
+          </div>
+
+          <div class="module__checkbox-group">
+            <label>
+              <input type="checkbox" name="ponencia[]" value="sharp" />
+              Dominik Sharp
+            </label>
+
+            <label>
+              <input type="checkbox" name="ponencia[]" value="ruiz" />
+              Alberto Ruiz
+            </label>
+
+            <label>
+              <input type="checkbox" name="ponencia[]" value="harrigan" />
+              Tim Harrigan
+            </label>
+
+            <label>
+              <input type="checkbox" name="ponencia[]" value="espona" />
+              Joana Espona
+            </label>
+
+            <label>
+              <input type="checkbox" name="ponencia[]" value="serra" />
+              Marta Serra
+            </label>
+
+            <label>
+              <input type="checkbox" name="ponencia[]" value="arrizabalaga" />
+              Lua Arrizabalaga
+            </label>
+          </div>
+
+          <div class="module__form-group">
+            <label for="message">Mensaje (opcional)</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+
+        <script async>
+          var boton = document.querySelector("button");
+          boton.addEventListener("click", function () {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              return;
+            }
+            if (boton.textContent !== "Enviar") {
+              boton.textContent = "Enviar";
+            } else {
+              boton.textContent = "Información enviada";
+              boton.style.backgroundColor = "green";
+            }
+          });
+        </script>
+      </div>
+
+      <include src="./views/footer.html"></include>
+    </div>
+  </body>
+</html>

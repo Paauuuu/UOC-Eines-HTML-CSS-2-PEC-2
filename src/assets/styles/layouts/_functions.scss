@@ -1,0 +1,7 @@
+@function custom_border($type, $color) {
+  @return 1px $type $color;
+}
+
+@function spacing($scale) {
+  @return $scale * 5px;
+}

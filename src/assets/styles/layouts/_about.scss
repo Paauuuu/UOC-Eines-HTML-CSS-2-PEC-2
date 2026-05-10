@@ -1,0 +1,144 @@
+@use "../variables";
+@use "functions";
+
+/*------------------------------------
+---------------  LAYOUT  -------------
+------------------------------------*/
+
+.layout__about {
+  container-type: inline-size;
+  display: grid;
+  z-index: 2;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(9, auto);
+  width: 100%;
+  padding-top: functions.spacing(15);
+  background-color: variables.$about-bg;
+
+  blockquote {
+    font-size: 2rem;
+    font-style: italic;
+  }
+}
+
+.layout__main-about {
+  header {
+    background-color: variables.$border-black;
+  }
+}
+
+.layout__row-2 {
+  display: flex;
+  grid-area: 3 / 2 / 5 / 4;
+  gap: functions.spacing(3);
+  width: 100%;
+  padding: functions.spacing(6) 0;
+  border-bottom: functions.custom_border(dashed, variables.$border-black);
+
+  :is(blockquote, p) {
+    display: flex;
+    align-items: center;
+    color: variables.$blue-text;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  @container (width < 600px) {
+    display: block;
+    gap: 0px;
+  }
+}
+
+.layout__row-3 {
+  grid-area: 5 / 2 / 6 / 4;
+  padding: functions.spacing(6) 0;
+  border-bottom: functions.custom_border(dashed, variables.$border-black);
+
+  ol {
+    p {
+      padding: functions.spacing(3) 0px;
+      color: variables.$border-black;
+      font-size: 0.8em;
+    }
+
+    li {
+      color: variables.$blue-text;
+      font-size: 1.1em;
+      font-weight: 400;
+    }
+  }
+}
+
+.layout__row-4 {
+  grid-area: 6 / 2 / 7 / 4;
+  padding: functions.spacing(6) 0;
+  color: variables.$border-black;
+
+  blockquote {
+    color: variables.$golden-icon;
+  }
+
+  p {
+    color: variables.$border-black;
+    font-size: 1.15rem;
+  }
+}
+
+.layout__row-5 {
+  grid-area: 7 / 2 / 9 / 4;
+  align-items: center;
+  justify-content: center;
+  min-height: functions.spacing(100);
+  padding-bottom: functions.spacing(120);
+  background-image: url(../images/artesania-2.webp);
+  background-size: cover;
+
+  @container (width < 500px) {
+    min-height: functions.spacing(20);
+  }
+
+  @container (width < 1000px) {
+    min-height: functions.spacing(60);
+  }
+}
+
+.layout__row-6 {
+  grid-area: 9 / 2 / 10 / 4;
+  padding: functions.spacing(6) 0;
+  color: variables.$border-black;
+  font-size: 1.1em;
+}
+
+/*------------------------------------
+---------------  MODULES  ------------
+------------------------------------*/
+
+div:has(blockquote) {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.module__upper-image {
+  display: flex;
+  z-index: 2;
+  grid-area: 1 / 1 / 3 / 5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: functions.spacing(100);
+  background-image: url(../images/artesania-3.webp);
+  background-size: cover;
+  .module__h1-about {
+    justify-content: center;
+    margin: auto;
+    padding: functions.spacing(1);
+    color: variables.$golden-icon;
+    text-align: center;
+    @container (width > 600px) {
+      font-size: 5em;
+    }
+  }
+}

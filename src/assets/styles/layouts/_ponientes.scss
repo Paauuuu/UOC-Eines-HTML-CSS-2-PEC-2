@@ -1,0 +1,89 @@
+@use "../variables";
+@use "functions";
+
+/*------------------------------------
+---------------  LAYOUT  -------------
+------------------------------------*/
+
+.layout__ponientes {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: variables.$footer-white;
+
+  background-image: url(../images/artesania-4.webp);
+
+  background-size: cover;
+  @container (width < 750px) {
+    header a {
+      color: variables.$border-black;
+    }
+  }
+}
+
+.layout__ponientes-container {
+  display: flex;
+  box-sizing: border-box;
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: functions.spacing(280);
+  margin-top: functions.spacing(10);
+
+  padding: functions.spacing(8) functions.spacing(4);
+}
+
+.layout__flex-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: functions.spacing(10);
+  justify-content: center;
+  width: 100%;
+  margin-bottom: functions.spacing(4);
+}
+
+.layout__img-poniente {
+  display: block;
+  margin: 0 auto;
+}
+
+/*------------------------------------
+---------------  MODULES  ------------
+------------------------------------*/
+
+.module__col {
+  display: flex;
+  flex: 1 1 calc(33.333% - functions.spacing(10));
+  flex-direction: column;
+  max-width: calc(33.333% - functions.spacing(10));
+
+  padding: functions.spacing(4);
+  border-radius: functions.spacing(2);
+  background-color: variables.$footer-yellow;
+
+  p {
+    font-size: functions.spacing(3);
+  }
+  h4 {
+    padding-top: functions.spacing(2);
+    font-size: functions.spacing(3);
+  }
+
+  @container (width < 1100px) {
+    flex: 1 1 calc(50% - functions.spacing(10));
+    max-width: functions.spacing(70);
+  }
+
+  @container (width < 700px) {
+    flex: 0 0 100%;
+    max-width: functions.spacing(100);
+  }
+}
