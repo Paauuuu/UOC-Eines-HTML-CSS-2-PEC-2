@@ -1,0 +1,10 @@
+@use "../variables";
+
+@import "bootstrap/scss/functions";
+
+$lead-font-weight: 900;
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
