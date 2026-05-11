@@ -76,11 +76,6 @@ textarea {
   resize: vertical;
 }
 
-small {
-  color: variables.$border-black;
-  font-size: 0.85rem;
-}
-
 button {
   padding: functions.spacing(3) functions.spacing(4);
   transition: background-color 0.3s ease;
@@ -109,14 +104,12 @@ button {
     display: flex;
     align-items: center;
     gap: functions.spacing(2);
-
+    color: variables.$about-bg;
     font-weight: 400;
   }
   input[type="checkbox"] {
     width: functions.spacing(4);
     height: functions.spacing(4);
-
-    accent-color: variables.$border-black;
 
     cursor: pointer;
   }
